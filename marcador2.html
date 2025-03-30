@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcador de Voleibol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #282c34;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .scoreboard {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 20px;
+        }
+        .score {
+            font-size: 80px;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+        #scoreA {
+            background-color: #00ff00;
+        }
+        #scoreB {
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Marcador de Voleibol</h1>
+    <div class="scoreboard">
+        <div class="score" id="scoreA" onclick="incrementScore('A')">0</div>
+        <div class="score" id="scoreB" onclick="incrementScore('B')">0</div>
+    </div>
+
+    <script>
+        let scoreA = 0;
+        let scoreB = 0;
+
+        function incrementScore(team) {
+            if (team === 'A') {
+                scoreA++;
+                document.getElementById('scoreA').innerText = scoreA;
+            } else if (team === 'B') {
+                scoreB++;
+                document.getElementById('scoreB').innerText = scoreB;
+            }
+        }
+    </script>
+</body>
+</html>
